@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'audiofield',
+
     'Nihonja.core',
     'Nihonja.cards',
 ]
@@ -51,6 +53,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'audiofield.middleware.threadlocals.ThreadLocals',
 ]
 
 ROOT_URLCONF = 'Nihonja.urls'
@@ -123,4 +127,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Nihonja', 'media')
+MEDIA_ROOT = os.path
