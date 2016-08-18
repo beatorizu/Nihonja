@@ -8,7 +8,7 @@ class Card(models.Model):
     kanji = models.TextField('Kanji')
     audio = AudioField(upload_to='cards/audios',
                         ext_whitelist=('.mp3', '.wav', '.ogg'),
-                        help_text=('Allowed type - .mp3, .wav, .ogg'))
+                        help_text=('Allowed type - .mp3, .wav, .ogg'), null=True, blank=True)
 
     created_at = models.DateTimeField('Created at', auto_now_add=True)
     updated_at = models.DateTimeField('Updated at', auto_now=True)
