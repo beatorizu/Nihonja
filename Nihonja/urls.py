@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('Nihonja.core.urls', namespace='core')),
+    url(r'^cards/', include('Nihonja.cards.urls', namespace='cards')),
     url(r'^admin/', admin.site.urls),
 ]
