@@ -22,3 +22,11 @@ class Card(models.Model):
     updated_at = models.DateTimeField('Updated at', auto_now=True)
 
     objects = CardManager()
+
+    def __str__(self):
+        return self.phrase
+
+    class Meta:
+        verbose_name = 'Cartão'
+        verbose_name_plural = 'Cartões'
+        ordering = ['phrase']
