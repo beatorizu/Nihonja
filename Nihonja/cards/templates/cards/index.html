@@ -3,45 +3,21 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-md-4">
+  {% for card in cards %}
+  <div class="col-sm-6 col-md-4">
     <div class="jumbotron">
       <h2>
-        Hello, world!
+        {{ card.kanji }}
       </h2>
       <p>
-        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+        {{ card.phrase }}
       </p>
       <p>
         <a class="btn btn-primary btn-large" href="#">Learn more</a>
       </p>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="jumbotron">
-      <h2>
-        Hello, world!
-      </h2>
-      <p>
-        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-      </p>
-      <p>
-        <a class="btn btn-primary btn-large" href="#">Learn more</a>
-      </p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="jumbotron">
-      <h2>
-        Hello, world!
-      </h2>
-      <p>
-        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-      </p>
-      <p>
-        <a class="btn btn-primary btn-large" href="#">Learn more</a>
-      </p>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 
 {% endblock %}
