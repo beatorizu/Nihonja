@@ -26,6 +26,10 @@ class Card(models.Model):
     def __str__(self):
         return self.phrase
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('cards:review', (), {'slug': self.slug})
+
     class Meta:
         verbose_name = 'Cartão'
         verbose_name_plural = 'Cartões'
