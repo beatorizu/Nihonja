@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load layout_tags %}
+
 {% block content %}
 
 <div class="container-fluid">
@@ -25,8 +27,8 @@
               {% for field in form  %}
                 <div class="form-group">
                     {{ field.label_tag }}
-                    {{ field }}
-                    {{ field.errors }}
+                    {{ field|add_css:"form-control" }}
+                    <div class="text-danger">{{ field.errors }}</div>
                 </div>
               {% endfor %}
               <button type="submit" class="btn btn-success">Enviar</button>
