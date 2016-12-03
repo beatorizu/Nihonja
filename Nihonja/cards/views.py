@@ -17,7 +17,7 @@ def review(request, slug):
         form = ContactCard(request.POST)
         if form.is_valid():
             context['is_valid'] = True
-            print(form.cleaned_data)
+            form.send_mail(card)
             form = ContactCard()
     else:
         form = ContactCard()
