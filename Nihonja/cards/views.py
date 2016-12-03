@@ -12,13 +12,16 @@ def index(request):
 
 def review(request, slug):
     card = get_object_or_404(Card, slug=slug)
+    context = {}
     if request.method == 'POST':
         form = ContactCard(request.POST)
+        if form.is_valid():
+            context['is_valid'] = True
+            print(form.cleaned_data)
+            form = ContactCard()
     else:
         form = ContactCard()
     template_name = 'cards/review.html'
-    context = {
-        'card': card,
-        'form': form
-    }
+    context['card'] = card
+    context['form'] = form
     return render(request, template_name, context)
