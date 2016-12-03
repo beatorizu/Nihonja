@@ -12,6 +12,22 @@
             <div class="circle">{{ card }}</div>
         </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+          <button type="submit" class="btn btn-success">Fale conosco</button>
+          <form role="form" class="form" method="post">
+            {% csrf_token %}
+              {% for field in form  %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+              {% endfor %}
+              <button type="submit" class="btn btn-success">Enviar</button>
+          </form>
+      </div>
+    </div>
 </div>
 
 {% endblock %}
