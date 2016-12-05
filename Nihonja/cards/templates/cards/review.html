@@ -1,40 +1,38 @@
 {% extends "base.html" %}
-
 {% load layout_tags %}
-
 {% block content %}
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-success text-center">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-success text-center">
                 Revisão
             </h3>
-            <div class="circle">{{ card.kanji }}</div>
-            <div class="circle">{{ card }}</div>
-        </div>
+      <div class="circle">{{ card.kanji }}</div>
+      <div class="circle">{{ card }}</div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-          <button type="submit" class="btn btn-success">Fale conosco</button>
-          {% if is_valid %}
-            <p>
-              Você submeteu o formulário
-            </p>
-          {% endif %}
-          <form role="form" class="form" method="post">
-            {% csrf_token %}
-              {% for field in form  %}
-                <div class="form-group">
-                    {{ field.label_tag }}
-                    {{ field|add_css:"form-control" }}
-                    <div class="text-danger">{{ field.errors }}</div>
-                </div>
-              {% endfor %}
-              <button type="submit" class="btn btn-success">Enviar</button>
-          </form>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-success">Fale conosco</button>
+      {% if is_valid %}
+        <p>
+          Você submeteu o formulário
+        </p>
+      {% endif %}
+      <form role="form" class="form" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group">
+            {{ field.label_tag }}
+            {{ field|add_css:"form-control" }}
+            <div class="text-danger">
+              {{ field.errors }}
+            </div>
+          </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-success">Enviar</button>
+      </form>
     </div>
+  </div>
 </div>
-
 {% endblock %}
