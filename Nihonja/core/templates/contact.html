@@ -1,19 +1,28 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% load layout_tags %}
+{% block content %}
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div class="jumbotron">
-        <h2>
-					Hello, world!
-				</h2>
+      <button type="submit" class="btn btn-success">Fale conosco</button>
+      {% if is_valid %}
         <p>
-          This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+          Você submeteu o formulário
         </p>
-        <p>
-          <a class="btn btn-success btn-large" href="http://beatorizu.deviantart.com/">Deviant Art</a>
-          <a class="btn btn-warning btn-large" href="https://github.com/beatorizu">Git Hub</a>
-        </p>
-      </div>
+      {% endif %}
+      <form role="form" class="form" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group">
+            {{ field.label_tag }}
+            {{ field|add_css:"form-control" }}
+            <div class="text-danger">
+              {{ field.errors }}
+            </div>
+          </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-success">Enviar</button>
+      </form>
     </div>
   </div>
 </div>
