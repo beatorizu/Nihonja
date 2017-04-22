@@ -1,6 +1,7 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
+from Nihonja.cards.views import index, review
 
 urlpatterns = [
-    url(r'^$', 'Nihonja.cards.views.index', name='index'),
-    url(r'^(?P<slug>[\w_-]+)/$', 'Nihonja.cards.views.review', name='review'),
+    url(r'^$', index, name='index'),
+    url(r'^(?P<slug>[\w_-]+)/$', review, name='review'),
 ]

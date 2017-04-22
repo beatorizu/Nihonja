@@ -1,7 +1,8 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
+from Nihonja.core.views import home, contact
 
 urlpatterns = [
-    url(r'^$', 'Nihonja.core.views.home', name='home'),
-    url(r'^contact/$', 'Nihonja.core.views.contact', name='contact'),
+    url(r'^$', home, name='home'),
+    url(r'^contact/$', contact, name='contact'),
 ]
