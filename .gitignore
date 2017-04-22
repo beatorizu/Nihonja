@@ -54,3 +54,6 @@ docs/_build/
 
 # Atom ignore
 .atomignore
+
+media/
+*.sqlite3
