@@ -3,11 +3,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="text-success text-center">
-                Revisão
-            </h3>
+      <h3 class="text-success text-center">Revisão</h3>
       <div class="circle">{{ card.kanji }}</div>
       <div class="circle">{{ card }}</div>
+      <audio id="card-audio" src="/media/{{ card.audio }}" type="audio/mpeg"></audio>
+      <button onclick="document.getElementById('card-audio').play()" type="button" class="btn btn-link btn-lg glyphicon glyphicon-play"></button>
     </div>
   </div>
 </div>
