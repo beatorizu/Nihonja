@@ -7,8 +7,8 @@ class ContactCard(forms.Form):
     email = forms.EmailField(label='E-mail')
     message = forms.CharField(label='Mensagem|Dúvida', widget=forms.Textarea)
 
-    def send_mail(self, card):
-        subject = '[%s] Contato' % card
+    def send_mail(self):
+        subject = '[%s] Contato'
         message = 'Nome: %(name)s; Email: %(email)s; %(message)s'
         context = {
             'name': self.cleaned_data['name'],

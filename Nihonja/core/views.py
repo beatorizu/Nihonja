@@ -11,7 +11,7 @@ def contact(request):
         form = ContactCard(request.POST)
         if form.is_valid():
             context['is_valid'] = True
-            form.send_mail(card)
+            form.send_mail()
             form = ContactCard()
     else:
         form = ContactCard()
