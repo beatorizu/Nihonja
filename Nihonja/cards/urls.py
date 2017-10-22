@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
 urlpatterns = [
     url(r'^$', 'Nihonja.cards.views.index', name='index'),
