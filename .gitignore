@@ -54,3 +54,4 @@ docs/_build/
 
 # Atom ignore
 .atomignore
+db.sqlite3
