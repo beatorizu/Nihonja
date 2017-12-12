@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'audiofield',
-
     'Nihonja.core',
     'Nihonja.cards',
 ]
